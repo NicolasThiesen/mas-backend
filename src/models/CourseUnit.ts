@@ -4,11 +4,13 @@ import { Activy } from "./Activy";
 
 @Entity("course_units")
 class CourseUnit{
+    
     constructor(){
         if(!this.id){
             this.id = uuid();
         }
-    }
+    } 
+
     @PrimaryColumn()
     readonly id: string;
 
@@ -20,7 +22,7 @@ class CourseUnit{
     @Column()
     description: string;
     @CreateDateColumn()
-    create_at: Date;
+    created_at: Date;
 
 }
 
