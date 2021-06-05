@@ -21,7 +21,11 @@ export class CreateActivies1619727590824 implements MigrationInterface {
                         type:"timestamp"
                     },
                     {
-                        name:"course_unit_id",
+                        name:"grade",
+                        type:"decimal",
+                    },
+                    {
+                        name:"courseUnitId",
                         type:"varchar",
                     },
                     {
@@ -35,7 +39,7 @@ export class CreateActivies1619727590824 implements MigrationInterface {
                         name:'ActivyCourseUnit',
                         referencedTableName:'course_units',
                         referencedColumnNames: ['id'],
-                        columnNames: ['course_unit_id']
+                        columnNames: ['courseUnitId']
                     }
                 ]
             })
