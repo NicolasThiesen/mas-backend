@@ -1,4 +1,4 @@
-import {Column, CreateDateColumn, Entity, ManyToOne, PrimaryColumn} from 'typeorm'
+import {Column, CreateDateColumn, Entity, ManyToOne, JoinTable, PrimaryColumn} from 'typeorm'
 import {v4 as uuid} from 'uuid';
 
 import { CourseUnit } from './CourseUnit';
@@ -21,12 +21,15 @@ class Activy {
     @Column()
     activy_date: Date;
     @Column()
-    course_unit_id: string;
+    courseUnitId: string;
+    @Column()
+    grade: number;
     @CreateDateColumn()
     created_at: Date;
 
     // Relacionamento entre as tabelas
     @ManyToOne(() => CourseUnit, course_unit => course_unit.activies)
+    @JoinTable()
     course_unit: CourseUnit
 }
 
